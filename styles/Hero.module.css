@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/* styles/Hero.module.css */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("/green/background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #f0e5ff;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  padding: "4em";
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0));
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .hero::before {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+  }
+}
+.hero .content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s; /* transition property for smooth animation */
+  outline: none;
+}
+
+.button:hover {
+  transform: scale(1.05); /* slightly scaling the button on hover */
+}
+
+.button:active {
+  transform: scale(0.95); /* slightly scaling down the button on click */
+}
+
+.graphic {
+  position: absolute;
+  top: 2.5em;
+  right: 0;
+  width: 100%;
+  height: auto;
+  max-height: 50%;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite;
+}
+
+/*... other css rules ...*/
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: "white";
+  font-family: "Roboto", sans-serif;
+}
+
+.content button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 20px;
+  background: #622570;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust according to your preference */
+}
+
+/*... remaining css ...*/
+.content {
+  position: absolute;
+  padding: 1.4em;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row; /* flex items displayed in a row */
+    align-items: center; /* flex items centered vertically */
+    justify-content: flex-start; /* flex items start from the left */
+    height: 100vh;
+  }
+
+  .hero .content {
+    width: 50%;
+    text-align: center; /* Change to left for small devices */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* align it to left */
+    gap: 20px;
+  }
+
+  .hero h1 {
+    text-align: left;
+    font-size: 5em;
+  }
+
+  .hero p {
+    text-align: left;
+  }
+
+  .content {
+    position: relative;
+    margin-top: 0em;
+    bottom: 0em;
+  }
+  .graphic {
+    position: relative;
+    bottom: auto;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+.shuffleButton {
+  position: fixed; /* update from absolute to fixed */
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 20px; /* rounded button */
+  background: #ffffff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.shuffleButton img {
+  width: 30px; /* specify the size here */
+  height: auto;
+}
