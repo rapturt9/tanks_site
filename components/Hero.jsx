@@ -69,6 +69,10 @@ const Hero = () => {
   const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 4));
 
   useEffect(() => {
+    setRandomNum(Math.floor(Math.random() * 4));
+  }, []);
+
+  useEffect(() => {
     setWindowHeight(window.innerHeight);
     const handleMouseMove = (event) => {
       const x = event.clientX - window.innerWidth / 4;
